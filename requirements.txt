@@ -1,0 +1,22 @@
+# LangChain + LangGraph ecosystem
+langchain>=0.1.16
+langgraph>=0.0.38
+langchainhub>=0.1.15
+
+# Web/API tools
+duckduckgo-search>=0.9
+wikipedia>=1.4.0
+arxiv==1.4.6
+
+# Optional UI
+streamlit>=1.32
+
+# For HTTP requests / parsing
+requests>=2.31.0
+beautifulsoup4>=4.12.3
+
+# For General Utils
+tqdm>=4.66.2
+fastapi
+uvicorn
+python-docx
