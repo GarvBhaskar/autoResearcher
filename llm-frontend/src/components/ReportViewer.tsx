@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { ClipboardCopyIcon, DownloadIcon } from '@heroicons/react/24/outline';
 
 export default function ReportViewer({ content }: { content: string }) {
   const [copied, setCopied] = useState(false);
@@ -16,12 +15,12 @@ export default function ReportViewer({ content }: { content: string }) {
 
   const handleDownload = () => {
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
+    const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
     a.download = 'generated_report.txt';
     a.click();
-    window.URL.revokeObjectURL(url);
+    URL.revokeObjectURL(url);
   };
 
   return (

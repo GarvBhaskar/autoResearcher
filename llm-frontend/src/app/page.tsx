@@ -33,12 +33,37 @@ export default function HomePage() {
   };
 
   return (
-    <main className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-8">📄 LLM Auto Report Generator</h1>
-      <ReportForm onGenerate={generateReport} />
-      {loading && <p className="text-center mt-4 text-blue-600">Generating report...</p>}
-      {error && <p className="text-center mt-4 text-red-500">{error}</p>}
-      <ReportViewer content={report} />
+    <main className="max-w-4xl mx-auto px-4 py-8">
+      <section className="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h1 className="text-3xl font-bold text-center mb-2">
+          LLM Auto Report Generator
+        </h1>
+        <p className="text-center text-gray-600 mb-6">
+          Generate AI-powered research reports by entering a topic and category.
+        </p>
+        <ReportForm onGenerate={generateReport} />
+      </section>
+
+      {loading && (
+        <div className="text-center text-blue-600 text-sm my-4">
+          Generating report...
+        </div>
+      )}
+
+      {error && (
+        <div className="text-center text-red-500 text-sm my-4">
+          {error}
+        </div>
+      )}
+
+      {report && (
+        <section className="bg-white p-6 rounded-lg shadow-md">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">
+            Generated Report
+          </h2>
+          <ReportViewer content={report} />
+        </section>
+      )}
     </main>
   );
 }

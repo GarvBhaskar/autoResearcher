@@ -10,7 +10,7 @@
   --accent: #2563eb; /* Tailwind blue-600 */
   --accent-hover: #1e40af;
 
-  --muted: #f3f4f6;
+  --muted: #f9fafb; /* light background for form fields */
   --border: #e5e7eb;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
@@ -30,7 +30,7 @@
   }
 }
 
-/* Global base styles */
+/* Global body styles */
 body {
   @apply antialiased;
   background-color: var(--background);
@@ -39,9 +39,14 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Headings and text */
+/* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+  color: var(--foreground);
+}
+
+p {
+  line-height: 1.6;
   color: var(--foreground);
 }
 
@@ -49,9 +54,10 @@ h1, h2, h3, h4, h5, h6 {
 input,
 textarea,
 select {
-  @apply w-full px-3 py-2 rounded-md border border-gray-300 dark:border-gray-700;
+  @apply w-full px-3 py-2 rounded-md border;
   background-color: var(--muted);
   color: var(--foreground);
+  border-color: var(--border);
   font-family: var(--font-sans);
   transition: all 0.2s ease-in-out;
 }
@@ -67,6 +73,7 @@ select:focus {
 /* Buttons */
 button {
   @apply font-semibold rounded-md px-4 py-2 transition-colors duration-200;
+  font-family: var(--font-sans);
 }
 
 button.primary {
@@ -86,6 +93,15 @@ button.secondary {
 
 button.secondary:hover {
   background-color: var(--border);
+}
+
+/* Report sections */
+section {
+  @apply mb-6;
+}
+
+section h2 {
+  @apply text-lg font-semibold mb-2 text-gray-800;
 }
 
 /* Code blocks */
