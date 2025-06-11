@@ -4,14 +4,14 @@
 
 /* CSS Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #121212;
+  --background: #000000;
+  --foreground: #e0f7ff;
 
-  --accent: #2563eb; /* Tailwind blue-600 */
-  --accent-hover: #1e40af;
+  --accent: #00f0ff;        /* Neon blue */
+  --accent-hover: #00d8ff;
 
-  --muted: #f9fafb; /* light background for form fields */
-  --border: #e5e7eb;
+  --muted: #0a0a0a;
+  --border: #1a1a1a;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -19,14 +19,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #f9f9f9;
+    --background: #000000;
+    --foreground: #e0f7ff;
 
-    --accent: #3b82f6;
-    --accent-hover: #60a5fa;
+    --accent: #00f0ff;
+    --accent-hover: #00d8ff;
 
-    --muted: #1f1f1f;
-    --border: #333;
+    --muted: #0a0a0a;
+    --border: #1a1a1a;
   }
 }
 
@@ -41,7 +41,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--foreground);
 }
 
@@ -60,6 +60,7 @@ select {
   border-color: var(--border);
   font-family: var(--font-sans);
   transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.1);
 }
 
 input:focus,
@@ -67,7 +68,7 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 2px var(--accent-hover);
+  box-shadow: 0 0 10px var(--accent);
 }
 
 /* Buttons */
@@ -78,11 +79,13 @@ button {
 
 button.primary {
   background-color: var(--accent);
-  color: white;
+  color: #000;
+  box-shadow: 0 0 10px var(--accent);
 }
 
 button.primary:hover {
   background-color: var(--accent-hover);
+  box-shadow: 0 0 15px var(--accent-hover);
 }
 
 button.secondary {
@@ -101,17 +104,19 @@ section {
 }
 
 section h2 {
-  @apply text-lg font-semibold mb-2 text-gray-800;
+  @apply text-lg font-semibold mb-2 text-[#00f0ff];
 }
 
 /* Code blocks */
 pre,
 code {
   font-family: var(--font-mono);
-  background-color: #f3f4f6;
-  padding: 0.5rem;
+  background-color: #0f0f0f;
+  color: #00f0ff;
+  padding: 0.75rem;
   border-radius: 0.5rem;
   overflow-x: auto;
+  box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
 }
 
 /* Scrollbar for webkit browsers */
@@ -122,8 +127,9 @@ code {
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent);
   border-radius: 10px;
+  box-shadow: inset 0 0 4px #000;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #111;
 }
